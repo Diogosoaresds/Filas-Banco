@@ -1,8 +1,6 @@
 import random
 import statistics
 
-clientes = random.randint(3, 11)
-
 fila1 = []
 fila2 = []
 fila3 = []
@@ -10,43 +8,15 @@ fila4 = []
 
 soma = 0
 
-print(clientes)
-
-while soma < (clientes / 4):
-    fila1.append(int(input('Senha: ')))
-    fila2.append(int(input('Senha: ')))
-    fila3.append(int(input('Senha: ')))
-    fila4.append(int(input('Senha: ')))
-    soma = soma + 1
-
-if (clientes / 4) == 0.75:
-    fila4.clear()
-
-if (clientes / 4) == 1.25:
-    del fila2[1]
-    del fila3[1]
-    del fila4[1]
-
-if (clientes / 4) == 1.5:
-    del fila3[1]
-    del fila4[1]
-
-if (clientes / 4) == 1.75:
-    del fila4[1]
-
-if (clientes / 4) == 2.25:
-    del fila2[2]
-    del fila3[2]
-    del fila4[2]
-
-if (clientes / 4) == 2.5:
-    del fila3[2]
-    del fila4[2]
-
-if (clientes / 4) == 2.75:
-    del fila4[2]
-
-soma = 0
+for i in range(1, random.randint(4, 12)):
+    if i % 4 == 1:
+        fila1.append(i)
+    elif i % 4 == 2:
+        fila2.append(i)
+    elif i % 4 == 3:
+        fila3.append(i)
+    elif i % 4 == 0:
+        fila4.append(i)
 
 print('Fila 1: ', fila1)
 print('Fila 2: ', fila2)
